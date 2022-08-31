@@ -1,31 +1,5 @@
 .App {
   text-align: center;
-  color: red;
-}
-.text-input{
-  top: 50px;
-  position: relative;
-  width: 100px;
-  height: 30px;
-  background-color: skyblue;
-  border-radius: 10px;
-  border: 2px solid skyblue;
-}
-.enter:hover{
-  background-color: skyblue;
-  border-radius: 10px;
-  transition-duration: 150ms;
-  color: white;
-}
-.enter{
-  /* background-color: skyblue; */
-  border: 2px solid skyblue;
-  width: 50px;
-  height: 30px;
-  position: relative;
-  left: 20px;
-  top: 50px;
-  /* border-radius: 10px; */
 }
 
 

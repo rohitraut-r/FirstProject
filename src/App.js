@@ -1,12 +1,20 @@
 
 import './App.css';
-import Hello from './components/Hello'
+import City from './components/City'
 
 function App() {
   return (
     <div className="App">
-     <input class="text-input" type="text"></input>
-     <button class="enter">Enter</button>
+      <City city="London" adjactive="beautiful"/>
+      <City city="Kathmandu" adjactive="awesome"/>
+      <City city="Beijing" adjactive="great"/>
+      <City city="Delhi" adjactive="marvelous"/>
+
+      
+      {/* <p>Hello, I am in London. It is beautiful</p>
+      <p>Hello, I am in Kathmandu. It is awesome</p>
+      <p>Hello, I am in Beijing. It is great</p>
+      <p>Hello, I am in Delhi. It is marvelous</p> */}
     </div>
   );
 }
