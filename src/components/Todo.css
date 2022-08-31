@@ -1,0 +1,61 @@
+
+.container{
+    position: relative;
+    top: 50px;
+    left: 300px;
+    
+    height: 400px;
+    width: 300px;
+    border: 1px solid black;
+  }
+  .app-logo{
+    position: relative;
+    top: 20px;
+    left: 100px;
+   
+    width: 100px;
+  }
+  .enter{
+    position: relative;
+    left: 20px;
+    height: 30px;
+    
+  }
+.add{
+    position: relative;
+    left: 30px;
+    background-color: blue;
+    color: white;
+    height: 30px;
+    border: 1px solid blue;
+}
+.add:hover, .remove:hover{
+    background-color: white;
+    color: black;
+    transition-duration: 0.5s;
+}
+.todo-list{
+
+    position: relative;
+    top: 30px;
+    text-align: center;
+    text-decoration: underline;
+}
+.list{
+    position: relative;
+    color: red;
+    left: 80px;
+    top: 20px;
+    list-style-type: none;
+}
+.remove{
+    position: relative;
+    left: 110px;
+    top: 30px;
+    height: 30px;
+    width: 80px;
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+
+}
