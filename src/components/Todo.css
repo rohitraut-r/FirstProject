@@ -44,7 +44,7 @@
 .list{
     position: relative;
     color: red;
-    left: 80px;
+    left: 40px;
     top: 20px;
     list-style-type: none;
 }
