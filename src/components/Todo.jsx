@@ -21,10 +21,12 @@ const Todo = () => {
   }
 
   function removeAll(){
-    setTodos(['']);
+    setTodos([]);
   }
-  function deleteOne(){
-  
+  function deleteOne(index){
+    const newTodos = [...todos];
+    newTodos.splice(index ,1);
+    setTodos(newTodos);
   }
  
 
@@ -45,7 +47,9 @@ const Todo = () => {
     <h3 class="todo-list">Todo Lists</h3>
     <ul class="list">
         {todos.map((todo) =>(
-          <li>{todo}<button class="edit" onClick={deleteOne}>Delete</button></li>
+          <li>{todo}
+          <button class="edit">Delete</button>
+          <button class="delete" onClick={()=>deleteOne(todos.indexOf(todo))}>Delete</button></li>
           ))}
          
     </ul>
