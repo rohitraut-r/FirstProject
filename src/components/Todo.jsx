@@ -14,7 +14,6 @@ const Todo = () => {
   // const handleSubmit = () =>{
 
   // }
-  console.log(inputData);
   function handleSubmit(){
     setTodos([...todos, inputData]);
     setInputData('');
@@ -28,6 +27,13 @@ const Todo = () => {
     newTodos.splice(index ,1);
     setTodos(newTodos);
   }
+  function updateTodo(index) {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1, inputData);
+    console.log(newTodos[index]);
+    setTodos(newTodos);
+    setInputData('');
+}
  
 
   return (
@@ -39,8 +45,6 @@ const Todo = () => {
         placeholder='Enter the items'
         value={inputData}
         onChange = {(e) => setInputData(e.target.value)} 
-        
-       
          >
      </input>
     <button class = "add"  onClick = {handleSubmit} disabled = {!inputData}>Add Todo</button>
@@ -48,7 +52,7 @@ const Todo = () => {
     <ul class="list">
         {todos.map((todo) =>(
           <li>{todo}
-          <button class="edit">Delete</button>
+          <button class="edit"onClick={()=>updateTodo(todos.indexOf(todo))}>Edit</button>
           <button class="delete" onClick={()=>deleteOne(todos.indexOf(todo))}>Delete</button></li>
           ))}
          
