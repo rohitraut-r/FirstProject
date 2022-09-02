@@ -30,11 +30,10 @@ const Todo = () => {
   function updateTodo(index) {
     const newTodos = [...todos];
     newTodos.splice(index, 1, inputData);
-    console.log(newTodos[index]);
     setTodos(newTodos);
-    setInputData('');
+    setInputData(todos[index]);
 }
- 
+
 
   return (
     <div class="container">
