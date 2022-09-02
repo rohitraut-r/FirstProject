@@ -1,14 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Todo.css'
+
+//get items from local storage
 
 const Todo = () => {
   const [inputData, setInputData] = useState('');
-  const [todos, setTodos] = useState([
-    'Walk for refreshment',
-    'Walk the dog',
-    'Rest a while',
-    'Watch a movie'
-  ]);
+  // const [todos, setTodos] = useState([
+  //   'Walk for refreshment',
+  //   'Walk the dog',
+  //   'Rest a while',
+  //   'Watch a movie'
+  // ]);
+  const [todos, setTodos] = useState(JSON.parse(localStorage.getItem('lists')) || []);
+
+
+  useEffect(() =>{
+    localStorage.setItem('lists', JSON.stringify(todos));
+  }, [todos]);
+
+  useEffect(() =>{
+   const data = JSON.parse(localStorage.getItem('lists'));
+   if(data){
+    setTodos(data);
+   }
+  }, []);
+
 
   //Arrow function can also be used 
   // const handleSubmit = () =>{
@@ -16,6 +32,7 @@ const Todo = () => {
   // }
   function handleSubmit(){
     setTodos([...todos, inputData]);
+    localStorage.setItem('todos', JSON.stringify(todos));
     setInputData('');
   }
 
@@ -34,6 +51,16 @@ const Todo = () => {
     setInputData(todos[index]);
 }
 
+
+//storing todos in local torage
+// function storeData(){
+//   localStorage.setItem('todos', JSON.stringify(todos));
+// }
+
+// function getData(){
+//   const data = localStorage.getItem('todos');
+
+// }
 
   return (
     <div class="container">
